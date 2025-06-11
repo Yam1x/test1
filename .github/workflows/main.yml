@@ -13,10 +13,12 @@ jobs:
       - name: Trigger Local Env
         run: |
           curl -X POST https://api.github.com/repos/Yam1x/test2/dispatches \
-          -H "Accept: application/vnd.github.everest-preview+json" \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          -H "Accept: application/vnd.github.v3+json" \
           -d '{"event_type": "Sync_UI_image_tag", "client_payload": {"sha": "${{ github.sha }}", "commit_message": "${{ github.event.head_commit.message }}"}}' 
 
 
 # curl -X POST https://api.github.com/repos/Yam1x/pelican-local-env/actions/workflows/Update-UI-image-tag.yml/dispatches \
 # -H "Accept: application/vnd.github.v3+json" \
+
+  # -H "Accept: application/vnd.github.everest-preview+json" \
+  # --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
