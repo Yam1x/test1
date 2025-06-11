@@ -12,9 +12,9 @@ jobs:
     steps: 
       - name: Trigger Local Env
         run: |
-          curl -X POST https://api.github.com/repos/Yam1x/test2/dispatches \
+          curl -X POST https://api.github.com/repos/Yam1x/test2/actions/workflows/main.yml/dispatches \
           -H "Accept: application/vnd.github.everest-preview+json" \
-          -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          -H 'authorization: Bearer ${{ secrets.SECRET }}' \
           -d '{"event_type": "Sync_UI_image_tag", "client_payload": {"sha": "${{ github.sha }}", "commit_message": "${{ github.event.head_commit.message }}"}}' 
 
 
