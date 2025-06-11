@@ -12,8 +12,7 @@ jobs:
     steps: 
       - name: Trigger Local Env
         run: |
-          # curl -X POST https://api.github.com/repos/Yam1x/pelican-local-env/actions/workflows/Update-UI-image-tag.yml/dispatches \
-          # -H "Accept: application/vnd.github.v3+json" \
+
           curl -X POST https://api.github.com/repos/Yam1x/test1/dispatches \
           -H "Accept: application/vnd.github.everest-preview+json" \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
